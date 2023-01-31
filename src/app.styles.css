@@ -1,0 +1,50 @@
+
+
+.Header {
+  background: #0D0D0D;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Header > div {
+  display: flex;
+  font-family: 'Inter';
+}
+
+.Header h1:nth-child(2) {
+  margin-left: 0.75rem;
+  color: var(--blue)
+}
+
+.Header h1:nth-child(3) {
+  color: var(--purple)
+}
+
+.Content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.CreateTask {
+  display: flex;
+  margin-top: -25px;
+}
+
+.CreateTask input {
+  display: flex;
+  padding: 1rem 2rem;
+  width: 40rem;
+  margin-right: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray-700);
+  background: var(--gray-500);
+  color: var(--gray-300);
+  outline: none;
+}
+
+.CreateTask input:focus {
+  border: 2px solid var(--purple-dark);
+}
