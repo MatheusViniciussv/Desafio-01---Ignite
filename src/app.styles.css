@@ -1,6 +1,11 @@
-
-
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .Header {
+  width: 100%;
   background: #0D0D0D;
   height: 200px;
   display: flex;
@@ -26,6 +31,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  max-width: 50rem;
 }
 
 .CreateTask {
@@ -47,4 +54,148 @@
 
 .CreateTask input:focus {
   border: 2px solid var(--purple-dark);
+}
+
+.CreateTask button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  border: 0;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: 300ms;
+}
+
+.CreateTask button:hover {
+  background: var(--blue);
+}
+
+.CreateTask button > img {
+  margin-left: 0.5rem;
+}
+
+.todoHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 4rem;
+}
+
+.todoHeader div  {
+  display: flex;
+}
+
+.todoHeader div span {
+  margin-right: 0.5rem;
+}
+
+.createdTasks span {
+  color: var(--blue);
+  font-weight: 700;
+  font-size: bold;
+}
+
+.createdTasks > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  color: var(--gray-200);
+  background: var(--gray-400);
+  width: 1.5rem;
+
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.completedTasks span {
+  color: var(--purple);
+  font-weight: 700;
+  font-size: bold;
+}
+
+.completedTasks > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  color: var(--gray-200);
+  background: var(--gray-400);
+  width: 1.5rem;
+
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.todoContentNoTask {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  font-size: 1rem;
+  color: var(--gray-300)
+}
+
+.todoContentNoTask strong {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+.todoContent {
+  margin-top: 1.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.taskCard {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--gray-500);
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray-400)
+}
+
+.taskCard + .taskCard {
+  margin-top: 1rem;
+}
+
+.taskCard span {
+  width: 82%;
+  display: flex;
+  color: var(--gray-100);
+}
+
+.taskCard input[type=checkbox] {
+  appearance: none;
+  background: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+  cursor: pointer;
+}
+
+.taskCard input[type=checkbox]:checked {
+  background: var(--purple);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--purple);
+  color: var(--gray-100);
+  cursor: pointer;
 }
