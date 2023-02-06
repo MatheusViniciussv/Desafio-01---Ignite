@@ -198,4 +198,21 @@
   border: 2px solid var(--purple);
   color: var(--gray-100);
   cursor: pointer;
+  background-image: url("./assets/checked.svg");
+  background-repeat: no-repeat;
+  background-size: 0.875rem 0.875rem;
+  background-position: center center;
+
+}
+
+.taskCard input[type=checkbox]:checked + span {
+  text-decoration: line-through;
+  color: var(--gray-300)
+}
+
+.taskCard button {
+  background: none;
+  border: 0;
+  height: 0.875rem;
+  width: 0.75rem;
 }

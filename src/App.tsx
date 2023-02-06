@@ -15,12 +15,8 @@ interface ITask {
 }
 
 function App() {
-  const [completedTasks, setCompletedTasks] = useState();
-
   const [tasks, setTasks] = useState<ITask[]>([]);
-
   const [title, setTitle] = useState<string>("");
-  // const [title, setTitle] = useState<boolean>(false);
 
   useEffect(() => {
     console.log(tasks);
@@ -69,7 +65,9 @@ function App() {
           </div>
           <div className="completedTasks">
             <span>Concluídas</span>
-            <div>0</div>
+            <div>
+              {tasks.filter((value) => value.completed === true).length}
+            </div>
           </div>
         </div>
 
@@ -82,19 +80,21 @@ function App() {
                   className="checkbox"
                   checked={item.completed}
                   onChange={({ target }) => {
-                    tasks.map((value) =>
-                      setTasks([
-                        {
-                          ...value,
-                          completed: target.checked,
-                        },
-                        ...tasks.filter((newTask) => newTask.id !== value.id),
-                      ])
+                    const completedTask = tasks.map((value) =>
+                      value.id === item.id
+                        ? { ...value, completed: target.checked }
+                        : value
                     );
+
+                    setTasks([...completedTask]);
                   }}
                 />
                 <span>{item?.title}</span>
-                <button>
+                <button
+                  onClick={() =>
+                    setTasks([...tasks.filter((value) => value.id !== item.id)])
+                  }
+                >
                   <img src={Trash} />
                 </button>
               </div>
